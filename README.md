@@ -9,6 +9,7 @@ This project is a Vue-based application designed to implement a wizard with two 
 
 - Docker
 - Node.js 22 LTS (If you want to run the project locally without Docker)
+- Gestor de paquetes npm (If you want to run the project locally without Docker)
 
 ### Installation
 
