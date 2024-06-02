@@ -62,6 +62,17 @@ const loadRuc = (rucData: Ruc) => {
   businessnameValue.value = ruc.businessname;
   codes = ruc.subsidiaries.map((subsidiary) => subsidiary.code);
 }
+//Not verified ruc
+const notVerifiedRuc = () => {
+  isRucVerified.value = false;
+  ruc = {
+    ruc: '',
+    businessname: '',
+    subsidiaries: [],
+  };
+  businessnameValue.value = '';
+  codes = [];
+}
 
 // Store lead data
 const storeLead = async (lead: Lead) => {
@@ -86,7 +97,7 @@ const storeLead = async (lead: Lead) => {
       router.push('/auth/approval');
     }
     else {
-      toast.error(response.message);
+      toast.error(response.errors);
     }
   } catch (error) {
     uiStore.isLoading = false;
@@ -125,7 +136,7 @@ watch(codeValue, (newValue) => {
 
 <template>
   <!-- Partial Verify Ruc with event when is verified with the ruc data -->
-  <VerifyRuc @ruc-verified="loadRuc" />
+  <VerifyRuc @ruc-verified="loadRuc" @ruc-not-verified="notVerifiedRuc" />
   <!-- Form Lead completion -->
   <v-form @submit="onSubmit" lazy-validation class="mt-7 loginForm">
     <template v-if="isRucVerified">

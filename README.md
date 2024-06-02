@@ -8,7 +8,7 @@ This project is a Vue-based application designed to implement a wizard with two 
 ### Prerequisites
 
 - Docker
-- Node.js 20 LTS (If you want to run the project locally without Docker)
+- Node.js 22 LTS (If you want to run the project locally without Docker)
 
 ### Installation
 
@@ -34,7 +34,7 @@ This project is a Vue-based application designed to implement a wizard with two 
    cd ..
    docker-compose up --build
    ```
-5. **Wait for the node_modules to install when this is completed the path and port will be shown**
+5. **Wait for the Dockerfile commands to finish, this install dependencies and run the application in development mode, will be shown: "Container wizardillarli-vue-1  Started"**
 
 6. **Access the application:**
    Open your browser and navigate to `http://localhost:5173`.
@@ -64,6 +64,8 @@ This project is a Vue-based application designed to implement a wizard with two 
 - Sends OTP to the provided phone number.
 - Verifies the OTP. If successful, the user proceeds to the next screen.
 
+![Screen 1](images/wizard-illarli-1.png)
+
 ### Screen 2: RUC Data Collection and Autocomplete
 
 - URL: `http://localhost:5173/auth/register`
@@ -71,10 +73,14 @@ This project is a Vue-based application designed to implement a wizard with two 
 - Autocompletes business information based on the provided RUC.
 - Saves the user's information.
 
+![Screen 2](images/wizard-illarli-2.png)
+
 ### Approval Message
 
 - URL: `http://localhost:5173/auth/approval`
 - Displays a message for the approval of all collected information.
+
+![Screen 3](images/wizard-illarli-3.png)
 
 ## API Endpoints
 

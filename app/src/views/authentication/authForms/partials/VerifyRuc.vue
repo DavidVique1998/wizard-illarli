@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import { useField, useForm } from 'vee-validate';
 import * as yup from 'yup';
 import { useAuthStore } from '@/stores/auth';
@@ -14,7 +13,7 @@ const toast = useToast();
 const authStore = useAuthStore();
 const uiStore = useUIStore();
 //Define Emits
-const emit = defineEmits(['ruc-verified']);
+const emit = defineEmits(['ruc-verified', 'ruc-not-verified']);
 // Form validation schema
 const schema = yup.object({
     ruc: yup.string().required('RUC es obligatorio'),
@@ -42,7 +41,8 @@ const verifyRuc = async () => {
             toast.success("RUC verified");
             emit('ruc-verified', response.data);
         }else{
-            toast.error(response.message);
+            toast.error(response.errors);
+            emit('ruc-not-verified');
         }
     } catch (error) {
         uiStore.isLoading = false;

@@ -55,7 +55,7 @@ const sendOTP = async () => {
     if (response.status) {
       toast.success(response.message);
     } else {
-      toast.error(response.message);
+      toast.error(response.errors);
     }
   } catch (error) {
     uiStore.isLoading = false;
@@ -78,7 +78,7 @@ const verifyOTP = async (): Promise<boolean> => {
     if (response.status) {
       toast.success(response.message);
     } else {
-      toast.error(response.message);
+      toast.error(response.errors);
     }
     return response.status;
   } catch (error) {
@@ -106,13 +106,11 @@ const storeLead = async (values: Lead) => {
       // Redirect to register page for completion of registration
       router.push('/auth/register');
     } else {
-      toast.error(response.message);
-      console.error('Error storing lead:', response.message);
+      toast.error(response.errors);
     }
   } catch (error) {
     uiStore.isLoading = false;
     toast.error('Error storing lead');
-    console.error('Error storing lead:', error);
   }
 };
 
