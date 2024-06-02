@@ -98,7 +98,7 @@ To run the project locally without Docker:
    cd app
    ```
 
-2. **Install dependencies:**
+2. **Install dependencies:**Espere a que el node_modules se instale cuando esto se complete se mostrará la ruta y el puerto que se mostrará
    ```sh
    npm install
    ```
@@ -111,9 +111,10 @@ To run the project locally without Docker:
 4. **Access the application:**
    Open your browser and navigate to `http://localhost:5173`.
 
-## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+## Documentation
+
+This is the resolution of a Full stack developer test. For more detailed information about OTP code support and RUC support, please refer to the [documentation](docs/wizard_test_front_end.pdf).
 
 ## License
 
