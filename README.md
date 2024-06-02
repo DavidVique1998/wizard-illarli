@@ -34,8 +34,9 @@ This project is a Vue-based application designed to implement a wizard with two 
    cd ..
    docker-compose up --build
    ```
+5. **Wait for the node_modules to install when this is completed the path and port will be shown**
 
-5. **Access the application:**
+6. **Access the application:**
    Open your browser and navigate to `http://localhost:5173`.
 
 ## Project Structure
